@@ -1,0 +1,188 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: linear-gradient(90deg, #fa69e9, #6a00a5);
+    user-select: none;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: max-content;
+    padding: 20px;
+    margin: auto;
+    position: relative;
+    top: 20vh;
+    background-color: rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
+}
+
+.envelope-1{
+    display: flex;
+    padding: 20px;
+    font-size: 160px;
+    color: #fffaeb;
+}
+
+@keyframes open-enveloper {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.envelope-2{
+    animation: open-enveloper ease-in 1s;
+    display: none;
+    justify-content: center;
+    padding: 20px;
+    font-size: 160px;
+    color: #fffaeb;
+}
+
+@keyframes subir {
+    from{
+        transform: translateY(30px);
+    }
+    to{
+        transform: translateY(-290px);
+    }
+}
+
+.coracao{
+    position: absolute;
+    top: 0;
+    font-size: 20px;
+    animation: subir 4s infinite;
+}
+
+@keyframes direita {
+    0%{
+        opacity: 0;
+        font-size: 20px;
+        transform: rotateZ(-30deg) translateX(0px);
+    }
+    30%{
+        opacity: 0.5;
+    }
+    50%{
+        opacity: 0.7;
+        font-size: 40px;
+        transform: rotateZ(30deg) translatex(10px);
+        color: #ff0000;
+    }
+    to{
+        opacity: 1;
+        font-size: 20px;
+        transform: rotateZ(-30deg)  translatex(-10px);
+        color: #ff0000;
+    }
+}
+
+@keyframes esquerda {
+    0%{
+        opacity: 0;
+        font-size: 40px;
+        transform: rotateZ(30deg) translateX(0px);
+    }
+    30%{
+        opacity: 0.5;
+    }
+    50%{
+        opacity: 0.7;
+        font-size: 20px;
+        transform: rotateZ(-30deg) translatex(-10px);
+        color: #ff0000;
+    }
+    to{
+        opacity: 1;
+        font-size: 40px;
+        transform: rotateZ(30deg) translatex(10px);
+        color: #ff0000;
+    }
+}
+
+#coracao-1{
+    display: flex;
+    animation: direita 3.7s infinite ease-in;
+}
+
+#coracao-2{
+    display: flex;
+    animation: esquerda 3.7s infinite ease-in;
+}
+
+.btns{
+    display: flex;
+    padding: 20px;
+    width: 300px;
+    justify-content: center;
+    gap: 1em;
+}
+
+.btns button{
+    background-color: #6a00a5;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    color: #fff;    
+    border-radius: 20px;
+    padding: 10px 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in;
+}
+
+.btns button:hover,.btns button:checked{
+    background-color: #fa69e9;
+}
+
+@media screen and (max-width:580px) {
+    .container{
+        width: 70%;
+    }
+
+    .modal{
+        position: fixed;
+        top: 0px;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.70);
+        backdrop-filter: blur(3px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container-modal{
+        position: relative;
+        padding: 60px;
+        background-color: rgba(255, 255, 255, 0.49);
+        border-radius: 20px;
+    }
+
+    .container-modal h2{
+        font-family: cursive, sans-serif;
+        font-weight: 200;
+        font-size: 36px;
+        text-align: center;
+        width: 200px;
+        color: #000;
+    }
+
+    .fa-xmark{
+        position: absolute;
+        right: -10px;
+        top: -10px;
+        color: rgba(255, 255, 255, 0.49);
+        background-color: #ff0000;
+        padding: 8px;
+        border-radius: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.49);
+    }
+}
